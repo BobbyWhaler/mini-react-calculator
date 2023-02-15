@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Display from "./components/Display.js";
+import ButtonPad  from "./components/ButtonPad.js";
+import { useState } from 'react';
 
 function App() {
+
+const [display, setDisplay] = useState("0")
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Mini Calculator
       </header>
+      <div className="App-container">
+        <Display display={display}/>
+        <ButtonPad setDisplay={setDisplay}/>
+      </div>
     </div>
   );
 }
